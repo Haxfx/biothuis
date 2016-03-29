@@ -1,0 +1,18 @@
+extends layout
+
+block content
+	form#formAddUser(name="adduser",method="post",action="/adduser?house=#{houseid}")
+		.optionBar.clean
+			input#inputFirstname(type="text", placeholder="Voornaam", name="firstname")
+		.optionBar.clean
+			input#inputLastname(type="text", placeholder="Achternaam", name="lastname")
+		.optionBar.clean
+			input#inputUserToken(type="text", placeholder="Token", name="token")
+		.optionBar.clean
+			input#inputUserHash(type="text", placeholder="Hash", name="accesshash")
+		.optionBar.clean
+			input#inputUserRole(type="text", placeholder="Rol", name="role")
+		.optionBar.clean
+			input#inputUserTime(type="text", placeholder="Tijd", name="accesstime")
+		.optionBar.clean
+			button#btnSubmit(type="submit") Toevoegen

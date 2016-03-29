@@ -1,0 +1,366 @@
+@containerWidth: 98%;
+@barWidth: @containerWidth - 10;
+
+// Font import
+@font-face{
+	font-family: Avenir;
+	src: url(../fonts/AvenirNextLTPro-Regular.otf);
+}
+
+/* Font Size */
+@fontMenu: 1em;
+@fontHeaderTitle: 4.5em;
+@fontContent: 1em;
+@fontTitle: 2.8em;
+@fontBar: 3.5em;
+@fontSizeInput: 1.1em;
+@fontPrevious: 0.8em;
+
+@fontFamily: "Avenir";
+
+// Colors
+@white: #ffffff;
+@firstBlue: #c1d6e5;
+@secondBlue: #7197b4;
+@thirdBlue: #5682a3;
+@grey: #333;
+
+
+body {
+  	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background: url("../images/background.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover; /* For WebKit*/
+	-moz-background-size: cover;    /* Mozilla*/
+	-o-background-size: cover;      /* Opera*/
+	background-size: cover;         /* Generic*/
+	  font: @fontContent;
+	  font-family: @fontFamily;
+	  margin: 0;
+	  font-weight: 100;
+
+	  a {
+	  	text-decoration: none;
+	  }
+
+  .mainContainer {
+  	max-width: @containerWidth;
+  	height: auto;
+  	margin: 0 auto;
+
+  	.navBar {
+  		margin: 0 auto;
+		padding: 2.5em 3.5em;
+		width: @barWidth;
+		height: 150px;
+		border-radius: 0 0 10px 10px;
+		background-color: @firstBlue;
+		color: @secondBlue;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		text-transform: uppercase;
+		margin-bottom: 2em;
+
+
+
+		.logoContainer {
+			width: 60%;
+			float: left;
+
+			h1 {
+				font-size: @fontHeaderTitle;
+				padding: 0;
+				margin: 0.1em 0;
+				text-transform: uppercase;
+				font-weight: 400;
+			}
+		}
+
+		.menuContainer {
+			width: auto;
+			float: right;
+			text-align: right;
+
+			.menu {
+				margin: 0.5em 0 0 0;
+				border-top: 15px solid @secondBlue;
+				border-bottom: 40px double @secondBlue; 
+				content:"";
+				height: 13px; 
+				width:	80px;
+			}
+		}
+  	}
+
+  	.contentContainer {
+  		margin: 0 auto;
+  		margin-top: 5em;
+
+	  	.topContentBar {
+	  		margin: 0 auto;
+			padding: 1em 1.3em;
+			width: @barWidth;
+			height: 140px;
+			font-size: @fontTitle;
+			border-radius: 10px 10px 0 0;
+			background-color: @white;
+			color: @secondBlue;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			text-transform: none;
+
+			.topLeftBar {
+				float: left;
+				width: 60%;
+
+				.icon {
+					float: left;
+					width: 55px;
+					height: 58px;
+					background-image: url("../images/icons/home.png");
+					background-repeat: no-repeat;
+					background-position: center top;
+					background-size: 1.5em;
+					content:"";
+				}
+
+				h2 {
+					float: left;
+					margin: 3px  0 0 10px;
+					padding: 0;
+					font-weight: 400;
+				}
+
+				h4 {
+					float: left;
+					font-size: 0.8em;
+					margin: 0.55em  0 0 10px;
+					padding: 0;
+					font-weight: 400;
+				}
+			}
+
+			.topRightBar {
+				float: right;
+				width: auto;
+				height: 35px;
+				margin-top: 10px;
+
+				.backIcon {
+					float: left;
+					width: 0; 
+					height: 0; 
+					border-top: 0.7em solid transparent;
+					border-bottom: 0.7em solid transparent; 
+					border-right: 0.7em solid @secondBlue; 
+				}
+
+				h4 {
+					float: left;
+					margin: 0.3em  0 0 0.3em;
+					padding: 0;
+					color: @secondBlue;
+					font-size: @fontPrevious;
+					font-weight: 400;
+				}
+
+			}
+  		}
+
+  		ul {
+  			list-style: none;
+  			margin: 0;
+  			padding: 0;
+  		}
+
+  		.optionBar {
+	  		margin: 0 auto;
+			width: @barWidth;
+			height: 140px;
+			font-size: @fontBar;
+			border-radius: 0;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			text-transform: capitalize;
+
+			a {
+				width: auto;
+				display: block;
+				height: auto;
+				padding: 0.8em 1.1em;
+
+				.log {
+					width: 72%;
+					font-size: 0.6em;
+					float: left;
+					text-transform: capitalize;
+				}
+
+				.right {
+					width: 28%;
+					text-align: right;
+					font-size: 0.7em;
+					float: right;
+				}
+			}
+
+			&:nth-child(even) {
+				background-color: @firstBlue;
+				color: @thirdBlue;
+				a {
+					color: @thirdBlue;
+				}
+			}
+
+			&:nth-child(odd) {
+				background-color: @thirdBlue;
+				color: @white;
+				a {
+					color: @white;
+				}
+			}
+
+			&:nth-last-child(1) {
+				border-radius: 0 0 10px 10px;
+			}
+
+			&:after {
+				float: right;
+				margin-right: 5%;
+				margin-top: -2em;
+				width: 42px;
+				height: 71px;
+				background-image: url("../images/icons/arrow.png");
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-size: 0.8em;
+				content:"";
+			}
+  		}
+
+  		.logBar {
+  			height: 75px;
+
+  			a {
+  				padding: 0.6em 1em !important;
+  			}
+  		}
+
+  		.clean {
+
+  			a {
+  				font-size: 0.8em;
+  				padding: 1.2em 1.3em;
+  			}
+
+  			&:after {
+				clear: both;
+				content: none;
+			}
+
+			.info {
+				float: right;
+				text-align: right;
+				width: 45%;
+
+				span {
+					font-size: 0.8em;
+				}
+			}
+
+			input[type="text"] {
+				margin: 0.5em 0.5em;
+				padding: 0.3em;
+				font-size: 1em;
+				width: 90%;
+				color: @thirdBlue;
+				border: none;
+				transition: border 0.3s;
+			}
+			input[type="text"]:focus, input[type="text"].focus {
+				border-bottom: solid 0.2em @secondBlue;
+			}
+
+			button[type="submit"], button[type="button"] {
+				padding: 19px 39px 18px 39px;
+				color: @white;
+				margin: 0.5em 0.5em;
+				background: @secondBlue;
+				font-size: 1em;
+				text-align: center;
+				font-style: normal;
+				width: 93.7%;
+				border: 1px solid @thirdBlue;
+				border-width: 1px 1px 3px;
+				border-radius: 10px;
+				margin-bottom: 10px;
+			}
+			button[type="submit"]:hover, button[type="button"]:hover {
+				border: 1px solid @secondBlue;
+			}
+  		}
+
+  		.add {
+  			background-color: @white !important;
+  			
+  			a{
+  				color: @thirdBlue !important;
+  			}
+
+  			span {
+  				float: left;
+  				width: 70%;
+  			}
+
+  			.icon {
+  				float: right;
+  				width: auto;
+  				margin-right: -0.4em;
+  				margin-top: 0.1em;
+
+				span{
+					height:40px; 
+					width:40px; 
+					display:block; 
+					position:relative;
+				} 
+
+				.demoSpan1{
+					border-radius:50px;
+					-webkit-border-radius:50px;
+					-moz-border-radius:50px; 
+					border: 5px solid @thirdBlue; 
+					width:52px; 
+					height:52px;
+				}
+
+				.demoSpan1:before, .demoSpan1:after{
+					content:''; 
+					height:5px; 
+					width:42px; 
+					display:block; 
+					background: @thirdBlue; 
+					border-radius:10px;
+					-webkit-border-radius:10px;
+					-moz-border-radius:10px; 
+					position:absolute; 
+					top:23px; 
+					left:5px;
+				}
+
+				.demoSpan1:after{
+					height: 42px;
+					width: 5px;
+					top: 5px;
+					left: 23px;
+				}
+  			}
+
+  			&:after {
+				clear: both;
+			}
+  		}
+  	}
+  }
+}
+
+

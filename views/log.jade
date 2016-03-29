@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	ul
+		each log, i in logs
+			.optionBar.clean.logBar
+				each home, i in homes
+					if home._id == log.l_h_id
+						a(href="#")
+							span.log #{user.u_fname} heeft de  #{home.h_address} #{home.h_number} #{log.l_subject} 
+							span.log.right #{log.l_timestamp}

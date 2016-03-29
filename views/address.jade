@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	.optionBar.clean
+		a(href="")
+			span Rol 
+			.info #{role.r_name}
+	.optionBar.clean
+		a(href="")
+			span Toegang 
+			.info #{access.a_time}
+	if role.r_name == "eigenaar"
+		.optionBar
+			a(href="users?house=#{houseid}")
+				span Gebruikers
+	.optionBar.clean
+		a(href="#")
+			span Notificaties
+			.info
+				form#formChangeNoti(name="changenoti",method="post",action="/changenoti?house=#{houseid}&user=#{userid}")
+					label.ios7-switch
+						input#inputSwitch(type="checkbox" onchange="$('#formChangeNoti').submit();"  name="checkbox" checked=(access.a_notification))
+						span

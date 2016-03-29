@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	.optionBar.clean
+		a(href="#")
+			span Naam
+			.info
+				span #{user.u_fname} #{user.u_lname}
+	.optionBar.clean
+		a(href="#")
+			span Notificaties
+			.info
+				form#formChangeNoti(name="changenotif",method="post",action="/changenotif?user=#{userid}")
+					label.ios7-switch
+						input#inputSwitch(type="checkbox" onchange="$('#formChangeNoti').submit();"  name="checkbox" checked=(user.u_noti))
+						span
+	.optionBar.clean
+		a(href="#")
+			span SMS Alert
+			.info
+				form#formChangeSMS(name="changesms",method="post",action="/changesms?user=#{userid}")
+					label.ios7-switch
+						input#inputSwitch(type="checkbox" onchange="$('#formChangeSMS').submit();"  name="checkbox" checked=(user.u_sms))
+						span

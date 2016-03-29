@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	form#formAddUser(name="adduser",method="post",action="/addhouse")
+		.optionBar.clean
+			input#inputHomeAddress(type="text", placeholder="Adres", name="address")
+		.optionBar.clean
+			input#inputHomeNumber(type="text", placeholder="Nummer en toevoeging", name="number")
+		.optionBar.clean
+			input#inputHomeCity(type="text", placeholder="Woonplaats", name="city")
+		.optionBar.clean
+			input#inputHomeType(type="text", placeholder="Type", name="hometype")
+		.optionBar.clean
+			button#btnSubmit(type="submit") Toevoegen

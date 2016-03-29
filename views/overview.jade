@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	ul
+		each home, i in homelist
+				each user, i in accesslist
+					if home._id == user.a_h_id && userid == user.a_u_id
+						li.optionBar
+							a(href="address?id=#{home._id}")
+								span #{home.h_address} #{home.h_number}
+		.optionBar.add
+			a(href="/newhouse")
+				span Toevoegen
+				.icon
+					span.demoSpan1
